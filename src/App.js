@@ -192,7 +192,7 @@ function Dashboard() {
     console.log("Making API call to /api/analytics/overview"); // DEBUG
     console.log(
       "Current auth header:",
-      api.defaults.headers.common["Authorization"]
+      api.defaults.headers.common["Authorization"],
     ); // DEBUG
 
     api
@@ -263,7 +263,7 @@ function Dashboard() {
         <StatCard
           title="Avg Processing"
           value={`${parseFloat(analytics.overview.avg_processing_time).toFixed(
-            2
+            2,
           )}ms`}
           icon="⚡"
           color="#10b981"
@@ -667,7 +667,7 @@ function AddClientForm({ onSuccess }) {
 
 function TestAPI() {
   const [text, setText] = useState(
-    "Congratulations! You won a FREE prize! Click here to claim your $1000!"
+    "Congratulations! You won a FREE prize! Click here to claim your $1000!",
   );
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -681,7 +681,7 @@ function TestAPI() {
       const res = await axios.post(
         `${API_URL}/api/moderate`,
         { text },
-        { headers: { "X-API-Key": apiKey } }
+        { headers: { "X-API-Key": apiKey } },
       );
       setResult(res.data);
     } catch (err) {
@@ -750,8 +750,8 @@ function TestAPI() {
                     result.recommendation === "REJECT"
                       ? "danger"
                       : result.recommendation === "REVIEW"
-                      ? "warning"
-                      : "success"
+                        ? "warning"
+                        : "success"
                   }`}
                 >
                   {result.recommendation}
