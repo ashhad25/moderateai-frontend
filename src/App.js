@@ -15,7 +15,7 @@ import {
 } from "recharts";
 import "./App.css";
 
-const API_URL = "https://moderateai-backend-production.up.railway.app/";
+const API_URL = "https://moderateai-backend.onrender.com";
 
 const api = axios.create({
   baseURL: API_URL,
